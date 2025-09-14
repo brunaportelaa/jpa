@@ -1,4 +1,5 @@
 package divas_pop.dao;
+import divas_pop.model.Album;
 import divas_pop.model.Artista;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
@@ -32,6 +33,15 @@ public class ArtistaDAOImpl implements GenericDAO<Artista> {
     @Override
     public List<Artista> listarTodos() {
         TypedQuery<Artista> query = em.createQuery("SELECT a FROM Artista a", Artista.class);
+        return query.getResultList();
+    }
+
+    public List<Album> listarAlbuns(int artistaId) {
+        TypedQuery<Album> query = em.createQuery(
+                "SELECT a FROM Album a WHERE a.artista.id = :artistaId",
+                Album.class
+        );
+        query.setParameter("artistaId", artistaId);
         return query.getResultList();
     }
 

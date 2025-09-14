@@ -103,6 +103,7 @@ public class Artista {
     @Override
     public String toString() {
         return "Nome: " + nome +
+                "\nId: " + id +
                 "\nIdade: " + idade +
                 "\nPaís: " + pais +
                 "\nQtd de Albuns: " + quantidadeAlbuns +

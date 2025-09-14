@@ -1,6 +1,7 @@
 package divas_pop.service;
 
 import divas_pop.model.Album;
+import divas_pop.model.Artista;
 
 import java.util.List;
 
@@ -25,4 +26,6 @@ public class AlbumService implements GenericService<Album> {
     public void deletar(Integer id) {
 
     }
+
+
 }

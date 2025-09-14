@@ -2,6 +2,7 @@ package divas_pop.service;
 
 import divas_pop.dao.ArtistaDAOImpl;
 import divas_pop.exception.ArtistaNaoEncontrado;
+import divas_pop.model.Album;
 import divas_pop.model.Artista;
 import jakarta.persistence.EntityManager;
 
@@ -45,4 +46,5 @@ public class ArtistaService implements GenericService<Artista> {
         }
         artistaDAO.deletar(id);
     }
+
 }

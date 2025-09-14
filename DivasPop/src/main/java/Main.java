@@ -17,15 +17,15 @@ public class Main {
         EntityManager em = emf.createEntityManager();
         EntityTransaction transaction = em.getTransaction();
 
-        ArtistaDAOImpl artistaDAO = new ArtistaDAOImpl(em);
         ArtistaService artistaService = new ArtistaService(em);
         ArtistaView artistaView = new ArtistaView();
 
 
         try {
 
-            ArtistaController controller = new ArtistaController(artistaService, artistaView);
-            controller.iniciar();
+//            ArtistaController controller = new ArtistaController(artistaService, artistaView);
+//            controller.iniciar();
+
 
         } catch (Exception e){
             if (transaction.isActive()) {
