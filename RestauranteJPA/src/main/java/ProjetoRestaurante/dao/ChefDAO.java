@@ -46,11 +46,47 @@ public class ChefDAO implements GenericDAO<Chef>{
         return em.createQuery(query).getResultList();
     }
 
+    public Chef listarPorId(long id){
+       CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Chef> query = cb.createQuery(Chef.class);
+
+        Root<Chef> chef = query.from(Chef.class);
+
+        query.select(chef)
+                .where(cb.equal(chef.get("id"), id));
+
+        return em.createQuery(query).getSingleResult();
+    }
+
+    public Chef listarPorNomeExato(String nome){
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Chef> query = cb.createQuery(Chef.class);
+
+        Root<Chef> chef = query.from(Chef.class);
+
+        query.select(chef)
+                .where(cb.equal(chef.get("name"), nome));
+
+        return em.createQuery(query).getSingleResult();
+    }
+
+    public Chef pesquisarPorNome(String termoPesquisa){
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Chef> query = cb.createQuery(Chef.class);
+
+        Root<Chef> chef = query.from(Chef.class);
+
+        query.select(chef)
+                .where(cb.like(chef.get("name"), cb.literal("%" + termoPesquisa + "%")));
+
+        return em.createQuery(query).getSingleResult();
+    }
+
     public void deletar(Chef chef) {
         EntityTransaction transaction = em.getTransaction();
         try {
             transaction.begin();
-            if (em.find(Chef.class, chef.getId()) != null) {
+            if (chef.getId() != null) {
                 em.remove(chef);
             }
             transaction.commit();

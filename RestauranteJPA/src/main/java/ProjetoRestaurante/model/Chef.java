@@ -85,4 +85,13 @@ public class Chef {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Chef{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", michelinStars=" + michelinStars +
+                ", speciality='" + speciality + '\'' +
+                "}\n\n -------------------- \n\n";
+    }
 }

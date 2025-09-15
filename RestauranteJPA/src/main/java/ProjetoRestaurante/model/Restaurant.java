@@ -76,4 +76,15 @@ public class Restaurant {
     public void setChef(Chef chef) {
         this.chef = chef;
     }
+
+    @Override
+    public String toString() {
+        return "Restaurant{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", cuisine='" + cuisine + '\'' +
+                ", address='" + address + '\'' +
+                ", chef=" + chef +
+                "}\n\n -------------------- \n\n";
+    }
 }
