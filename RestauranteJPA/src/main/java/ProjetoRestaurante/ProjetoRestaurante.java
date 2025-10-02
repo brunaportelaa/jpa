@@ -21,7 +21,7 @@ public class ProjetoRestaurante {
 
         try {
 
-            System.out.println(chefDAO.listarPorId(3));
+            System.out.println(chefDAO.listarPorId(4));
 
         } catch (Exception e) {
             if (transaction.isActive()) {

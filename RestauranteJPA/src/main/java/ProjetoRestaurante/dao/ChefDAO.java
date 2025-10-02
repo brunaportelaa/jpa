@@ -1,5 +1,6 @@
 package ProjetoRestaurante.dao;
 
+import ProjetoRestaurante.exception.dao.DataAccessException;
 import ProjetoRestaurante.model.Chef;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
@@ -31,7 +32,7 @@ public class ChefDAO implements GenericDAO<Chef>{
             if (transaction.isActive()) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Erro ao salvar chef: " + e.getMessage(), e);
+            throw new DataAccessException("Erro ao salvar chef: " + e.getMessage(), e);
         }
     }
 
@@ -94,7 +95,7 @@ public class ChefDAO implements GenericDAO<Chef>{
             if (transaction.isActive()) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Erro ao deletar chef: " + e.getMessage(), e);
+            throw new DataAccessException("Erro ao salvar chef: " + e.getMessage(), e);
         }
     }
 }

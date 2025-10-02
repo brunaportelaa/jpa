@@ -1,8 +1,6 @@
 package ProjetoRestaurante.dao;
 
 import ProjetoRestaurante.model.Restaurant;
-import ProjetoRestaurante.model.Restaurant;
-import ProjetoRestaurante.model.Restaurant;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.criteria.CriteriaBuilder;
